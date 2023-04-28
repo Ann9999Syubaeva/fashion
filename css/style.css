@@ -1,0 +1,497 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #22262A;
+    font: 400 15px/22px 'Poppins', Arial, Helvetica, sans-serif; /* и font-size и главный шрифт */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: .4s;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+button {
+    display: block;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+.btn-primary {
+   color: #fff; 
+   font-size: 18px;
+   font-weight: 500;
+   background-color: #22262A;
+}
+
+.btn-primary:hover {
+    background-color: #035fbb;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header a:hover,
+.header button:hover {
+    color: #035fbb;
+} 
+
+.header__title {
+    font-size: 28px;
+    line-height: 42px;
+}
+
+.header-nav__item {
+    display: inline-block;
+    margin-right: 25px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.header-nav__item:last-child {
+    margin-right: 0;
+}
+
+.header-nav__item:hover {
+    color: #035fbb;
+}
+
+.header-user__item {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.header-user__item:last-child {
+    margin-right: 0;
+}
+
+/* баннер */
+.banner-wrap {
+    padding: 325px 0 100px;
+    background: url("..//img/header-banner.jpg") no-repeat;
+    background-size: cover;
+    /*
+    width: 100%;
+    height: 80vh;
+    */
+}
+
+.banner {
+    width: 460px; /* обязательно */
+    margin-left: auto;
+}
+
+.banner__text {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+}
+
+.banner__trend {
+    font-size: 80px;
+    line-height: 120px;
+}
+
+/* Кнопки на сайте  */
+.banner-link-wrap {
+    margin-top: 25px;
+}
+
+.banner__link {
+    width: 150px;
+    padding: 5px 35px;
+    margin-right: 35px;
+}
+
+.banner__link:last-child {
+    margin-right: 0;
+}
+
+/* section - Категории */
+.section {
+    padding: 115px 0 0;
+}
+
+/* Верстка на Grid */
+.category {
+    display: grid;
+    grid-template-areas:
+    "img1 img1 img4 img4"
+    "img2 img3 img4 img4";
+    gap: 25px;
+}
+
+.category__link {
+    position: relative;
+    min-height: 285px;
+    cursor: pointer;
+}
+
+.category__link:hover:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb( 0 0 0 /50%);
+}
+
+.category__link:nth-child(1) {
+    grid-area: img1;
+    background: url("../img/category-1.png") 50% 0%/cover no-repeat;
+}
+
+.category__link:nth-child(2) {
+    grid-area: img2;
+    background: url("../img/category-2.png") 50% 0%/cover no-repeat;
+}
+
+.category__link:nth-child(3) {
+    grid-area: img3;
+    background: url("../img/category-3.png") 50% 0%/cover no-repeat;
+}
+
+.category__link:nth-child(4) {
+    grid-area: img4;
+    background: url("../img/category-4.png") 50% 0%/cover no-repeat;
+}
+
+.category__name {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    padding: 5px 20px;
+    font-size: 18px;
+    opacity: 0;
+    font-weight: 500;
+    background-color: #fff;
+}
+
+.category__link:hover
+.category__name {
+    opacity: 1;
+}
+
+/* Следующие разделы женской и мужской моды */
+.section__title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.section__subtitle {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.new-product-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-product {
+    width: 24%;
+}
+
+.new-product__img {
+    margin-bottom: 28px;
+}
+
+.new-product__brand {
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.new-product__link {
+    display: block;
+    margin: 3px 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.new-product__link:hover {
+    color: #035fbb;
+}
+
+.new-product__price_old {
+    margin-right: 30px;
+    text-decoration: line-through; /* текст зачёркнут */
+}
+
+.new-product__price_new {
+    color: #CF2929;
+}
+
+/* style */
+.style {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+}
+
+.style-left {
+    width: 50%;
+    height: 100%;
+    background: url("../img/avone-styles-1.png") 50% 100%/550px no-repeat;
+}
+
+.style-right {
+    position: relative;
+    width: 48%;
+    height: 100%;
+    background: url("../img/avone-styles-2.png") 0% 0%/515px no-repeat;
+}
+
+.style-right:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    width: 252px;
+    height: 303px;
+    background: #fff url("..//img/avone-styles-3.png") 100% 100%/227px 281px no-repeat;
+}
+
+.syle__link {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    bottom: 40px;
+    right: 260px;
+    z-index: 2;
+}
+
+.syle__link:after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: #22262A;
+    transition: .4s;
+}
+
+.syle__link:hover {
+    color: #035fbb;
+}
+
+.syle__link:hover:after {
+    background: #035fbb;
+}
+
+/* Предпоследний блок */
+.collection-wrap {
+    margin-top: 121px;
+    background: url("..//img/footer.png") no-repeat;
+    background-size: cover;
+}
+
+.collection {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.collection .banner__trend {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+/* Footer */
+.footer-main {
+    padding: 115px 0 105px;
+    background-color: #F2F8FC;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__title {
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 38px;
+}
+
+.footer__text {
+    width: 405px;
+    height: 69px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.footer__location {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    padding-left: 41px;
+}
+
+.footer__location:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: url("../img/location.png") 50% 50%/100% no-repeat;
+    transform: translateY(-50%);
+}
+
+.footer__email {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 7px;
+}
+
+.footer__email:hover,
+.footer__tel:hover {
+    color: #035fbb;
+}
+
+.footer__email:after {
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #22262A;
+}
+
+.footer__email:hover::after {
+    background-color: #035fbb;
+}
+
+.footer__tel {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social__link {
+    margin-right: 15px;
+}
+
+.social__link:hover {
+    color: #035fbb;
+    transition: .4s;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: space-between;
+    width: 530px;
+    margin-bottom: 50px;
+
+    background: #FFF;
+    box-shadow: 0px 0px 5px rgba(0 0 0 /7%);
+    border-radius: 5px;
+}
+
+.footer-form__input {
+    width: 100%;
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+.footer-form__input:focus {
+    border: 1px solid #22262A;
+}
+
+.footer-form__btn {
+    width: 80px;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+
+}
+
+.footer-form__btn:hover {
+    color: #fff;
+    background-color: #22262A;
+}
+
+.footer-nav-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav__title {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.footer-nav__item {
+    margin-bottom: 21px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.footer-nav__item a:hover {
+    color: #035fbb;
+}
+
+/* Footer copyright */ 
+.footer-copyright {
+    padding: 35px 0;
+    background-color: #E7F5F8;
+    text-align: center;
+}
+
+.footer-copyright__text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+}
